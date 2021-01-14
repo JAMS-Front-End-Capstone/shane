@@ -1,0 +1,59 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "service component for app",
+  "main": "index.js",
+  "scripts": {
+    "backend": "nodemon backend/server.js",
+    "frontend": "npm run webpack & npm run live-server",
+    "webpack": "webpack --config webpack.config.js --watch -d source-map",
+    "live-server": "live-server --watch=frontend/dist --wait=1000 frontend/dist",
+    "start": "npm run backend & npm run frontend",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JAMS-Front-End-Capstone/app.git"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/*",
+      "frontend/*"
+    ],
+    "watch": [
+      "backend/*"
+    ],
+    "delay": "1000"
+  },
+  "author": "JAMS",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JAMS-Front-End-Capstone/app/issues"
+  },
+  "homepage": "https://github.com/JAMS-Front-End-Capstone/app#readme",
+  "dependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "axios": "^0.21.1",
+    "babel-loader": "^8.2.2",
+    "express": "^4.17.1",
+    "live-server": "^1.2.1",
+    "node": "^15.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "webpack": "^5.13.0",
+    "webpack-cli": "^4.3.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^26.6.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "mongoose": "^5.11.11",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "react-test-renderer": "^17.0.1"
+  }
+}
