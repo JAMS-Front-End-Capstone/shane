@@ -17,5 +17,8 @@ module.exports.handleDatabaseSeeding = (req, res, next) => {
     .then( (result) => {
       view.sendReplyToRequestor(req, res, next, result);
     })
-    .catch( e => errorHandler.log( e ) );
+    .catch( (error) => {
+      errorHandler.log(error);
+      view.sendError(req, res, next, error);
+    });
 };

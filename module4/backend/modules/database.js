@@ -1,13 +1,14 @@
 const path = require('path');
 const mongoose = require('mongoose');
 const faker = require('faker');
+const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-const endpoint = 'mongodb://localhost/fec-module4';
+const url = 'mongodb://localhost/fec-module4';
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true
 };
-mongoose.connect(endpoint, options);
+mongoose.connect(url, options);
 
 const logConnectionResult = (error) => {
   if (error) {
@@ -18,7 +19,7 @@ const logConnectionResult = (error) => {
 };
 
 mongoose.connection.on('error', (err) => {
-  logConnectionResult(err);
+  errorHandler.log(err);
 });
 
 mongoose.connection.once('open', logConnectionResult);
@@ -39,7 +40,6 @@ const Model = mongoose.model('m4-property', schema);
 const createSeedRecord = () => {
   return new Promise((resolve, reject) => {
     const propertyTypeArray = ['Beaches', 'Jet Boating', 'Snorkeling', 'Boat Rentals', 'Tubing', 'Sightseeing Tours', 'Boat Tours', 'Excursions', 'Day Cruises', 'Shark Diving'];
-
     const data = {
       name: faker.company.companyName(),
       cost: (Math.floor(Math.random() * 500 + 60) + (Math.floor(Math.random() * 99 + 1)) / 100),
@@ -77,7 +77,6 @@ module.exports.seedDatabase = (databaseModel, qtyOfRecords = 5) => {
       resolve(output);
     }
   });
-
 };
 
 module.exports.Model = Model;
