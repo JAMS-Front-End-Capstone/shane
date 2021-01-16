@@ -61,10 +61,9 @@ class ListItem extends React.Component {
       );
     } else {
       return (
-        <span></span>
+        <span>Loading...</span>
       );
     }
-
   }
 }
 export default ListItem;

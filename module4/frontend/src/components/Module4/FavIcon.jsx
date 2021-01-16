@@ -2,9 +2,7 @@ const React = require('react');
 class FavIcon extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-
-    };
+    this.state = {};
   }
   render(props) {
     console.log('rendering Module4-ListItem');
