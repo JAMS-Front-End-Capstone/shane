@@ -2,7 +2,7 @@ const path = require('path');
 
 // modules
 const database = require(path.join(__dirname, 'modules', 'database.js'));
-const controller = require(path.join(__dirname, 'modules', 'controller.js'));
+const controller = require(path.join(__dirname, 'modules', 'controllers.js'));
 
 // express
 const express = require('express');
@@ -26,6 +26,7 @@ app.use('/public', express.static(path.join(__dirname, 'public')));
 
 // routers
 app.get('/API/retrieve', controller.handleAPIrequest);
+app.get('/API/seedDatabase', controller.handleDatabaseSeeding);
 
 // listeners
 app.listen(port, () => {
