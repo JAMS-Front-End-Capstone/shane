@@ -1,0 +1,101 @@
+
+.saveToTripWrapper
+{
+	cursor:pointer;
+	font-size:medium;
+	margin:0;
+	padding:0;
+	position:absolute;
+	right:4px;
+	top:4px;
+}
+
+.vb-div
+{
+	cursor:pointer;
+	display:flex;
+	font-size:medium;
+	margin:0;
+	padding:0;
+  position:relative;
+  fill:orange;
+
+}
+
+.vb-background
+{
+	cursor:pointer;
+	display:flex;
+	font-size:30px;
+	height:30px;
+	line-height:0;
+	width:30px;
+  z-index:1;
+  fill:white;
+}
+
+
+
+.vb-white
+{
+	cursor:pointer;
+	font-size:30px;
+	left:0;
+	line-height:0;
+	position:absolute;
+  top:0;
+  z-index:0;
+  opacity: 1;
+  transition: fill .25s ease-in-out;
+}
+
+.vb2-background {
+  display: block;
+  height: 19.5px;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  width: 19.5px;
+  z-index: -1;
+}
+
+.vb-white-svg
+{
+	cursor:pointer;
+	display:inline-block;
+	font-size:30px;
+	height:1em;
+	line-height:0;
+	vertical-align:bottom;
+  width:1em;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 100%;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  fill:white;
+
+}
+.vb-red
+{
+	cursor:pointer;
+	font-size:30px;
+	left:0;
+	line-height:0;
+	position:absolute;
+	top:0;
+	transition:opacity .025s ease-in-out;
+  z-index:0;
+  fill: orange;
+}
+
+.vb-red-svg
+{
+	cursor:pointer;
+	display:inline-block;
+	font-size:30px;
+	height:1em;
+	line-height:0;
+	vertical-align:bottom;
+  width:1em;
+}
+
