@@ -79,3 +79,6 @@
   display: block;
 }
 
+.more-horizontal:before {
+  content:"\e091";
+}
