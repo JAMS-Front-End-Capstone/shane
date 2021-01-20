@@ -79,4 +79,6 @@ module.exports.seedDatabase = (databaseModel, qtyOfRecords = 5) => {
   });
 };
 
+module.exports.seedDatabase();
+
 module.exports.Model = Model;
