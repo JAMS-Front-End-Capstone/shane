@@ -55,9 +55,9 @@ class ListItem extends React.Component {
         );
       });
       return (
-        <span>
+        <div className="shelf_item_container" id="module4ItemContainer">
           {records}
-        </span>
+        </div>
       );
     } else {
       return (

@@ -12,32 +12,23 @@ class Module4List extends React.Component {
     this.getElementsFromAPI = this.getElementsFromAPI.bind(this);
   }
   getElementsFromAPI() {
-    axios.get(APT_RESEED_URL)
-      .then( (data) => {
-        console.log('Module 4: List.getElementsFromAPI: API says:', data);
-        setTimeout(() => {
-          axios.get(API_SERVER_URL)
-            .then(({ data }) => {
-              if (data.length === 0) { console.log('Module 4: List.getElementsFromAPI: ERROR: Received zero records from API server. Check database contents.'); }
-              this.setState( { elements: data } );
-            })
-            .catch(function (error) {
-              console.log('Module 4: List.getElementsFromAPI: ERROR!', error);
-            });
-        }, 1000);
+    axios.get(API_SERVER_URL)
+      .then(({ data }) => {
+        if (data.length === 0) { console.log('Module 4: List.getElementsFromAPI: ERROR: Received zero records from API server. Check database contents.'); }
+        this.setState( { elements: data } );
       })
-      .catch( (error) => {
-        console.log('Module 4: List.getElementsFromAPI: ERROR: Unable to seed database');
-        setTimeout(this.getElementsFromAPI, 3000);
+      .catch(function (error) {
+        console.log('Module 4: List.getElementsFromAPI: ERROR!', error);
       });
   }
+
   componentWillMount() {
     this.getElementsFromAPI();
   }
   render() {
     if (this.state.elements.length > 0) {
       return (
-        <div className="Module4" key="Module4">
+        <div className="Module4 " key="Module4">
           <link rel="stylesheet" href="module4-List.css"></link>
           <div id="atf_meta" className="ui_container"><p></p></div>
           <div id="btf_wrap" className="ui_container">
@@ -58,11 +49,7 @@ class Module4List extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div className="shelf_item_container" id="module4ItemContainer">
-                      <ListItem elements={this.state.elements} />
-                      <div className="prw_shelves_attraction_shelf_item_widget">
-                      </div>
-                    </div>
+                    <ListItem elements={this.state.elements} />
                   </div>
                 </div>
               </div>

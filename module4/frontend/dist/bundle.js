@@ -441,26 +441,18 @@ var Module4List = /*#__PURE__*/function (_React$Component) {
     value: function getElementsFromAPI() {
       var _this2 = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default().get(APT_RESEED_URL).then(function (data) {
-        console.log('Module 4: List.getElementsFromAPI: API says:', data);
-        setTimeout(function () {
-          axios__WEBPACK_IMPORTED_MODULE_1___default().get(API_SERVER_URL).then(function (_ref) {
-            var data = _ref.data;
+      axios__WEBPACK_IMPORTED_MODULE_1___default().get(API_SERVER_URL).then(function (_ref) {
+        var data = _ref.data;
 
-            if (data.length === 0) {
-              console.log('Module 4: List.getElementsFromAPI: ERROR: Received zero records from API server. Check database contents.');
-            }
+        if (data.length === 0) {
+          console.log('Module 4: List.getElementsFromAPI: ERROR: Received zero records from API server. Check database contents.');
+        }
 
-            _this2.setState({
-              elements: data
-            });
-          })["catch"](function (error) {
-            console.log('Module 4: List.getElementsFromAPI: ERROR!', error);
-          });
-        }, 1000);
+        _this2.setState({
+          elements: data
+        });
       })["catch"](function (error) {
-        console.log('Module 4: List.getElementsFromAPI: ERROR: Unable to seed database');
-        setTimeout(_this2.getElementsFromAPI, 3000);
+        console.log('Module 4: List.getElementsFromAPI: ERROR!', error);
       });
     }
   }, {
@@ -473,7 +465,7 @@ var Module4List = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       if (this.state.elements.length > 0) {
         return /*#__PURE__*/React.createElement("div", {
-          className: "Module4",
+          className: "Module4 ",
           key: "Module4"
         }, /*#__PURE__*/React.createElement("link", {
           rel: "stylesheet",
@@ -510,14 +502,9 @@ var Module4List = /*#__PURE__*/function (_React$Component) {
         }, "(", this.state.elements.length, ")")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("a", {
           href: "#",
           className: "see_all_link"
-        }, "See all")))), /*#__PURE__*/React.createElement("div", {
-          className: "shelf_item_container",
-          id: "module4ItemContainer"
-        }, /*#__PURE__*/React.createElement(_ListItem_jsx__WEBPACK_IMPORTED_MODULE_0__.default, {
+        }, "See all")))), /*#__PURE__*/React.createElement(_ListItem_jsx__WEBPACK_IMPORTED_MODULE_0__.default, {
           elements: this.state.elements
-        }), /*#__PURE__*/React.createElement("div", {
-          className: "prw_shelves_attraction_shelf_item_widget"
-        }))))))));
+        })))))));
       } else {
         return /*#__PURE__*/React.createElement("span", null, "Loading...");
       }
@@ -643,7 +630,10 @@ var ListItem = /*#__PURE__*/function (_React$Component) {
             className: "clear"
           })))), /*#__PURE__*/React.createElement(_FavIcon_jsx__WEBPACK_IMPORTED_MODULE_0__.default, null));
         });
-        return /*#__PURE__*/React.createElement("span", null, records);
+        return /*#__PURE__*/React.createElement("div", {
+          className: "shelf_item_container",
+          id: "module4ItemContainer"
+        }, records);
       } else {
         return /*#__PURE__*/React.createElement("span", null, "Loading...");
       }
