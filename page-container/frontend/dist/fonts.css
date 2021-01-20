@@ -17,15 +17,15 @@
   }
   .ui_icon:before{
     display:inline-block;
-  font-style:normal;
-  font-weight:400;
-  font-variant:normal;
-  font-size:inherit;
-  line-height:1;
-  font-family:TripAdvisor_Regular!important;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  text-decoration:underline;
+    font-style:normal;
+    font-weight:400;
+    font-variant:normal;
+    font-size:inherit;
+    line-height:1;
+    font-family:TripAdvisor_Regular!important;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    text-decoration:underline;
   }
   .ui_icon.ui_icon:before{
     text-decoration:none;

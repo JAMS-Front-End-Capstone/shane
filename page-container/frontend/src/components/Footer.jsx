@@ -7,9 +7,9 @@ class Footer extends React.Component {
   render() {
     console.log('rendering Footer');
     return (
-      <div key="Footer">
+      <span id="Component_Footer" key="Footer">
         Footer
-      </div>
+      </span>
     );
   }
 }

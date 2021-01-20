@@ -12,7 +12,7 @@ class App extends React.Component {
   render() {
     console.log('rendering App');
     return (
-      <div className="rebrand_2017">
+      <div id="Component_App" className="rebrand_2017">
         <Header />
         <div className="page">
           <AdvertisingBanner />

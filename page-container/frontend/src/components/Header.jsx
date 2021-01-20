@@ -2,6 +2,8 @@ import React from 'react';
 import '../css/Header.css';
 import HealthBanner from './HealthBanner.jsx';
 import NavigationLinks from './NavigationLinks';
+import Navigation from './Navigation.jsx';
+import NavigationDropdown from './NavigationDropdown.jsx';
 
 class Header extends React.Component {
   constructor(props) {
@@ -15,11 +17,11 @@ class Header extends React.Component {
   render() {
     console.log('rendering Header');
     return (
-      <div key="Header">
+      <span id="Component_Header" key="Header">
         <HealthBanner />
+        <NavigationDropdown />
         <NavigationLinks />
-      </div>
-
+      </span>
     );
   }
 }
