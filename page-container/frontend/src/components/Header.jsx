@@ -19,6 +19,7 @@ class Header extends React.Component {
     return (
       <span id="Component_Header" key="Header">
         <HealthBanner />
+        <Navigation />
         <NavigationDropdown />
         <NavigationLinks />
       </span>
