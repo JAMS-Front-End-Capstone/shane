@@ -1,3 +1,5 @@
+
+
 .ui_icon:before{display:inline-block;
   font-style:normal;
   font-weight:400;
@@ -79,6 +81,10 @@
 html body {
   font-family: 'Trip Sans', Arial, sans-serif;
   webkit-font-smoothing: antialiased;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
 }
 
 

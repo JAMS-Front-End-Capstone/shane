@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/Banner.css';
+import '../css/AdvertisingBanner.css';
 
-class Banner extends React.Component {
+class AdvertisingBanner extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -35,4 +35,4 @@ class Banner extends React.Component {
     );
   }
 }
-export default Banner;
+export default AdvertisingBanner;

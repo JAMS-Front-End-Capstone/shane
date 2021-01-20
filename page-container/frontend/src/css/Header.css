@@ -1,24 +1,89 @@
-/*! CSS Used from: Embedded*/
-li {
-  margin:0;
-  padding:0;
-  }
 
-  a {
-  text-decoration:none;
-  }
 
-  div,h1 {
-  margin:0;
-  padding:0;
-  }
+.health-notice {
+  margin: 0;
+  padding: 0;
+}
 
-  h1 {
-  font-size:100%;
-  font-weight:700;
-  }
+.health-container1 {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #faf1ed;
+  color: black;
+}
 
-  .link {
+.health-container2 {
+  padding: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-left: 73.5px;
+  margin-right: 73.5px;
+  box-sizing: border-box;
+}
+
+.health-container3 {
+  font-size: medium;
+  font-family: 'Trip Sans', Arial, sans-serif !important;
+  color: black;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.health-container4 {
+  margin: 0;
+  display: inline;
+  padding: 12px 0;
+  margin-right: 12px;
+}
+
+.travel-notice {
+  padding-right: 4px;
+}
+
+.travel-notice-text1 {
+  line-height: 120%;
+  font-weight: 700;
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+  font-size: 16px;
+  color: black;
+}
+
+.travel-notice-text2 {
+  font-family: "Trip Sans VF", "Trip Sans", Arial, sans-serif;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 16.8px;
+color: rgb(51, 51, 51);
+}
+
+.travel-notice-text2 a {
+  font-style: normal;
+  -webkit-tap-highlight-color: transparent;
+  background: rgba(0,0,0,0);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: rgb(51, 51, 51);
+  text-decoration: none;
+  font-weight: 700;
+}
+.travel-notice-button {
+  font-family: inherit;
+  margin-left: auto;
+  border-radius: 24px;
+  min-height: 24px;
+  min-width: 24px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+
+.link {
   -webkit-tap-highlight-color:rgba(0,0,0,0);
   color:inherit;
   cursor:pointer;
@@ -501,3 +566,4 @@ li {
   overflow:hidden;
   visibility:hidden;
   }
+
