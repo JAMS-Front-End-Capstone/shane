@@ -23,8 +23,8 @@ class Navigation extends React.Component {
                     <div className="navigation-search">
                       <div className="navigation-search-box" >
                         <form className="navigation-search-form">
-                          <input type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" required="" name="q" className="navigation-search-text" title="Search" aria-label="Search" value=""></input>
-                          <button type="submit" formaction="/Search" className="navigation-search-submit" title="Search" aria-label="Search" tabindex="-1">
+                          <input type="search" className="navigation-search-text" title="Search" aria-label="Search"></input>
+                          <button type="submit" className="navigation-search-submit" title="Search" aria-label="Search">
                           </button>
                         </form>
                       </div>
@@ -59,8 +59,8 @@ class Navigation extends React.Component {
                     </a>
                   </div>
                   <div className="navigation-signin-container">
-                    <a class="navigation-signin-link" href="#">
-                      <span class="navigation-signin-text">
+                    <a className="navigation-signin-link" href="#">
+                      <span className="navigation-signin-text">
                     Sign in
                       </span>
                     </a>

@@ -11,7 +11,7 @@ class HealthBanner extends React.Component {
   render() {
     console.log('rendering HealthBanner');
     return (
-      <span id="Component_HealthBanner">
+      <div id="Component_HealthBanner" className="Component_HealthBanner">
         <div className="health-notice" id="health-notice" onClick={this.hideHealthNotice}>
           <div className="health-container1">
             <div className="health-container2">
@@ -34,7 +34,7 @@ class HealthBanner extends React.Component {
             </div>
           </div>
         </div>
-      </span>
+      </div>
     );
   }
 }

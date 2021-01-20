@@ -6,3 +6,33 @@
   overflow-x: unset;
 }
 
+.page {
+  margin: 0;
+  padding: 0;
+  max-width: 1328px;
+  padding-left: 24px;
+  padding-right: 24px;;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.main {
+  margin: 0;
+  padding: 0;
+  border-width: 1px 0 0;
+  border-style: solid;
+  border-color: #e0e0e0;
+  background-color: #f2f2f2;
+  color: #2c2c2c;
+}
+
+.page-divider {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 200;
+  background-color: #e6e6e6;
+  padding: 10px 0;
+  color: #2c2c2c;
+}

@@ -17,7 +17,7 @@ class Header extends React.Component {
   render() {
     console.log('rendering Header');
     return (
-      <span id="Component_Header" key="Header">
+      <span id="Component_Header">
         <HealthBanner />
         <Navigation />
         <NavigationDropdown />
