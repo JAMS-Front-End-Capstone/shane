@@ -1,0 +1,232 @@
+.Component_Footer {
+  margin: 0;
+box-sizing: border-box;
+margin-left: 0;
+margin-right: 0;
+background-color: #fff;
+margin-bottom: 24px;
+border: 1px solid #e0e0e0;
+padding: 24px;
+border-radius: 2px;
+display: flex;
+height: 218px;
+
+}
+
+.footer-item{
+  font-family: 'Trip Sans', Arial, sans-serif !important;
+  margin: 0;
+  box-sizing: border-box;
+  position: relative;
+  padding: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex: none;
+  width: 33.33333333%;
+
+}
+
+
+.footer-item {
+  padding-left:50px;
+  position:relative;
+  text-align:left;
+}
+
+@media (min-width:768px) {
+  .footer-item {
+  -ms-flex-direction:column;
+  -webkit-flex-direction:column;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  flex-direction:column;
+  padding:12px;
+  text-align:center;
+  }
+}
+
+
+
+.footer-item-title {
+  padding-left:50px;
+  position:relative;
+  text-align:left;
+  font-family: "Trip Sans", Arial, sans-serif  ;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  flex-grow: 1;
+  font-size: 16px;
+
+}
+
+@media (min-width:768px) {
+  .footer-item-title {
+  -ms-flex-direction:column;
+  -webkit-flex-direction:column;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  flex-direction:column;
+  padding:6px;
+  text-align:center;
+  }
+}
+
+.footer-item-body {
+  color:#8c8c8c;
+  font-size:14px;
+  line-height:18px;
+  margin:8px 0;
+  }
+
+  @media (min-width:768px) {
+  .footer-item-body {
+  -ms-flex-positive:1;
+  -webkit-flex-grow:1;
+  flex-grow:1;
+  }
+}
+
+
+
+.footer-item-icon {
+  padding:0;
+  text-align:center;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  -webkit-flex-direction:column;
+  -ms-flex-direction:column;
+  flex-direction:column;
+
+}
+
+@media (max-width:767px) {
+  .footer-item-icon {
+  font-size:24px;
+  line-height:28px;
+  position:absolute;
+  left:10px;
+  top:5px;
+  }
+}
+
+  @media (min-width:768px) {
+    .footer-item-icon {
+    font-size:32px;
+    line-height:36px;
+    }
+  }
+
+
+.footer-item-button {
+  -ms-flex-item-align:start;
+  -webkit-align-self:flex-start;
+  align-self:flex-start;
+  }
+
+  @media (min-width:768px) {
+  .footer-item-button {
+  -ms-flex-item-align:center;
+  -webkit-align-self:center;
+  align-self:center;
+  }
+  }
+
+  .footer-item-button {
+  -ms-flex-item-align:start;
+  -webkit-align-self:flex-start;
+  align-self:flex-start;
+  }
+
+  @media (min-width:768px) {
+  .footer-item-button {
+  -ms-flex-item-align:center;
+  -webkit-align-self:center;
+  align-self:center;
+  }
+  }
+
+  .footer-item-button {
+  -ms-flex-item-align:start;
+  -webkit-align-self:flex-start;
+  align-self:flex-start;
+  }
+
+  @media (min-width:768px) {
+  .footer-item-button {
+  -ms-flex-item-align:center;
+  -webkit-align-self:center;
+  align-self:center;
+  }
+  }
+
+  .footer-item-button {
+  -ms-flex-item-align:start;
+  -webkit-align-self:flex-start;
+  align-self:flex-start;
+  }
+
+  @media (min-width:768px) {
+  .footer-item-button {
+  -ms-flex-item-align:center;
+  -webkit-align-self:center;
+  align-self:center;
+  }
+  }
+  .ui_button {
+    -moz-appearance:none;
+    -moz-osx-font-smoothing:grayscale;
+    -webkit-appearance:none;
+    -webkit-font-smoothing:antialiased;
+    appearance:none;
+    background-clip:padding-box;
+    border:1px solid transparent;
+    border-radius:2px;
+    box-sizing:border-box;
+    cursor:pointer;
+    display:inline-block;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:700;
+    line-height:18px;
+    padding:8px 16px;
+    position:relative;
+    text-align:center;
+    text-decoration:none;
+    transition:background-color .2s;
+    }
+
+    .ui_button:focus:active {
+    outline:none;
+    text-decoration:none;
+    }
+
+    .ui_button.primary {
+    background-color:#000;
+    border-color:#000;
+    border-radius:3px;
+    color:#fff;
+    }
+
+    .ui_button.primary:not(.disabled):hover {
+    background-color:#292929;
+    border-color:#292929;
+    text-decoration:none;
+    }
+
+    .ui_button.primary:not(.disabled):focus {
+    box-shadow:0 0 0 2px #fff,0 0 0 3px #000;
+    outline:none;
+    text-decoration:none;
+    }
+
+    .ui_button.primary:not(.disabled):active {
+    background-color:#525252;
+    border-color:#525252;
+    box-shadow:none;
+    }

@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-const url = 'mongodb://localhost/fec-q-and-a';
+const url = 'mongodb://localhost/qanda';
 const options = {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -27,29 +27,32 @@ mongoose.connection.once('open', logConnectionResult);
 const author = {
   name: String,
   imageUrl: String,
-  contributions: Number,
+  contributions: { type: Number, default: 0 },
+  helpfulVotes: { type: Number, default: 0 },
   location: String
 };
 
+const authorModel = mongoose.model('author', author);
+
 const post = {
-  author: [authorModel],
+  author: Array,
   date: String,
   language: String,
   body: String,
-  replies: [postModel]
+  helpfulScore: {type: Number, default: 0 },
+  replies: Array,
 };
 
-const authorModel = mongoose.model('author', author);
 const postModel = mongoose.model('post', post);
 
 const createSeedRecord = () => {
   return new Promise((resolve, reject) => {
-
     const contributor = {
       name: faker.internet.userName(),
       imageUrl: faker.internet.avatar(),
       contributions: Math.floor(Math.random() * 300 + 1),
-      location: faker.address.city() + ', ' + faker.address.state()
+      location: faker.address.city() + ', ' + faker.address.state(),
+      helpfulVotes: Math.floor(Math.random() * 100 + 1)
     };
 
     const question = {
@@ -57,25 +60,27 @@ const createSeedRecord = () => {
       date: faker.date.recent(),
       language: 'English',
       body: faker.lorem.paragraph(),
+      helpfulScore: Math.floor(Math.random() * 50 + 1),
       replies: []
     };
 
-    const output = new Model(question);
+    const output = new postModel(question);
     resolve(output);
   });
 };
 
-module.exports.seedDatabase = (databaseModel, qtyOfRecords = 30) => {
+module.exports.seedDatabase = (qtyOfRecords = 30) => {
   return new Promise ((resolve, reject) => {
-    databaseModel.collection.drop();
+    postModel.collection.drop();
     let anErrorOccured = false;
     for (let i = 0; i < qtyOfRecords; i++) {
       if (anErrorOccured) { break; }
       createSeedRecord()
         .then((record) => {
-          databaseModel.create(record);
+          postModel.create(record);
         })
         .catch((error) => {
+          console.log('Seeding error:', error);
           anErrorOccured = true;
         });
     }
@@ -88,7 +93,7 @@ module.exports.seedDatabase = (databaseModel, qtyOfRecords = 30) => {
   });
 };
 
-module.exports.seedDatabase(postModel);
+module.exports.seedDatabase();
 
 module.exports.postModel = postModel;
 module.exports.authorModel = authorModel;

@@ -1,6 +1,6 @@
 import React from 'react';
 import AnswerList from './AnswerList.jsx';
-
+import Reply from './Reply.jsx';
 class Question extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +12,7 @@ class Question extends React.Component {
       <span className="Component_Question">
         <p>Question!</p>
         <AnswerList />
+        <Reply />
       </span>
     );
   }

@@ -12,7 +12,6 @@ module.exports.handleAPIrequest = (req, res, next) => {
     })
     .catch( e => errorHandler.log( e ) );
 };
-
 module.exports.handleDatabaseSeeding = (req, res, next) => {
   db.seedDatabase(db.Model)
     .then( (result) => {
