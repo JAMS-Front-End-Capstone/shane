@@ -46,32 +46,52 @@ const post = {
 const postModel = mongoose.model('post', post);
 
 const createSeedRecord = () => {
+
   return new Promise((resolve, reject) => {
-    const contributor = {
-      name: faker.internet.userName(),
-      imageUrl: faker.internet.avatar(),
-      contributions: Math.floor(Math.random() * 300 + 1),
-      location: faker.address.city() + ', ' + faker.address.state(),
-      helpfulVotes: Math.floor(Math.random() * 100 + 1)
+
+    const generateContributor = () => {
+      let image = `/avatars/${Math.floor(Math.random() * (8 - 1 + 1) )}.jpg`;
+      return {
+        name: faker.internet.userName(),
+        imageUrl: image,
+        contributions: Math.floor(Math.random() * 300 + 1),
+        location: faker.address.city() + ', ' + faker.address.state(),
+        helpfulVotes: Math.floor(Math.random() * 100 + 1)
+      };
     };
 
-    const question = {
-      author: contributor,
-      date: faker.date.recent(),
-      language: 'English',
-      body: faker.lorem.paragraph(),
-      helpfulScore: Math.floor(Math.random() * 50 + 1),
-      replies: []
+    const generatePost = (replyDate = '2019-04-23') => {
+      let output = {
+        author: generateContributor(),
+        date: faker.date.between(replyDate, '2021-02-01'),
+        language: 'English',
+        body: faker.lorem.paragraph(),
+        helpfulScore: Math.floor(Math.random() * 50 + 1)
+      };
+      return output;
     };
 
-    const output = new postModel(question);
+    const output = new postModel(generatePost());
+    let includeResponses = (Math.random() < 0.75);
+    let responsesArray = [];
+
+    if (includeResponses) {
+      let qtyOfResponses = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+      for (let i = 0; i < qtyOfResponses; i++) {
+        const replyToPush = new postModel(generatePost(output.date));
+        output.replies.push(replyToPush);
+      }
+    }
     resolve(output);
   });
 };
 
 module.exports.seedDatabase = (qtyOfRecords = 30) => {
   return new Promise ((resolve, reject) => {
-    postModel.collection.drop();
+    postModel.collection.drop()
+      .catch((error) => {
+        console.log('database.seedDatabase: database already dropped');
+      });
     let anErrorOccured = false;
     for (let i = 0; i < qtyOfRecords; i++) {
       if (anErrorOccured) { break; }

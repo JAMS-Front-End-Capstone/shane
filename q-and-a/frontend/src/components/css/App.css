@@ -1,3 +1,39 @@
+.translation-container {
+  margin-bottom: 8px;
+  display: none;
+}
+
+.Component_Question{
+  margin-bottom:12px;
+  background-color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  display: block;
+
+}
+
+.Component_Answer {
+  border:solid #e0e0e0;
+  border-width:0 0 1px;
+  font-size:16px;
+  line-height:20px;
+  padding:16px 24px 12px;
+
+}
+.Component_Question:first-child {
+  margin-top:16px;
+}
+
+.show-all-answers-container{
+display:block;
+margin-top:16px;
+font-weight:700;
+font-size:14px;
+line-height:18px;
+color:#000;
+}
+.show-all-answers-container:hover,.show-all-answers-container:visited{color:#000;}
+
+
 .ui_button {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -24,13 +60,7 @@
 .ui_container {
   box-sizing: border-box
 }
-.thumb-icon-container,
-.ellipsis,
-.ask-a-question-div,
-.ui_button,
-.ui_link {
-  cursor: pointer
-}
+
 .ui_button,
 button {
   font-family: inherit
@@ -51,7 +81,6 @@ a {
   font-size: inherit;
   speak: none
 }
-.votes-container,
 .show-all-answers-container,
 .ui_button {
   font-weight: 700
@@ -96,7 +125,6 @@ img {
   color: #474747;
   text-decoration: none
 }
-.thumb-icon-container:hover,
 .show-all-answers-container,
 .show-all-answers-container:hover,
 .show-all-answers-container:visited {
@@ -109,8 +137,7 @@ img {
   line-height: 18px
 }
 .show-all-answers-container {
-  display: block;
-  margin-top: 16px
+  margin-top: 16px;
 }
 .message-body-container {
   color: #8c8c8c;
@@ -126,17 +153,7 @@ img {
   margin-left: auto;
   margin-top: 8px
 }
-.thumb-icon-container {
-  color: #bababa;
-  font-size: 18px
-}
-.votes-container {
-  color: #474747;
-  font-size: 12px;
-  margin: 0 8px;
-  min-width: 30px;
-  text-align: center
-}
+
 @media (min-width:768px) {
   .ellipsis:hover {
     color: #00aa6c
@@ -543,9 +560,7 @@ img {
 .ui_icon:before {
   text-decoration: underline
 }
-.translation-container {
-  margin-bottom: 8px
-}
+
 .date-span {
   float: right
 }
@@ -648,7 +663,7 @@ img {
   font-family: 'Trip Sans',Arial,sans-serif!important;
   margin: 16px 0 12px;
   padding: 0;
-  background-color: #fff
+  background-color: #f2f2f2
 }
 .answer-text,
 textarea {

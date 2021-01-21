@@ -2,8 +2,8 @@ const QTY_OF_REVIEWS_TO_DISPLAY = 3;
 const API_SERVER_URL = 'http://localhost:3000/API/retrieve';
 
 import React from 'react';
-import QuestionList from './QuestionList.jsx';
 import Navigation from './Navigation.jsx';
+import Questions from './Questions.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import axios from 'axios';
@@ -43,7 +43,7 @@ class App extends React.Component {
         <div className="Q-and-A_Container">
           <Navigation reviewCount={this.state.elements.length}/>
           <Header />
-          <QuestionList elements={this.state.elements} />
+          <Questions elements={this.state.elements} />
           <Footer />
         </div>
       );

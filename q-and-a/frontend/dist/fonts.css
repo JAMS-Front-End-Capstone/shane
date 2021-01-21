@@ -3,14 +3,14 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url(TripSans-Regular.woff2) format('woff2'),url(TripSans-Regular.woff) format('woff')
+  src: url(/fonts/TripSans-Regular.woff2) format('woff2'),url(/fonts/TripSans-Regular.woff) format('woff')
 }
 @font-face {
   font-family: 'Trip Sans';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url(TripSans-Medium.woff2) format('woff2'),url(TripSans-Medium.woff) format('woff')
+  src: url(/fonts/TripSans-Medium.woff2) format('woff2'),url(/fonts/TripSans-Medium.woff) format('woff')
 }
 
 @font-face {
