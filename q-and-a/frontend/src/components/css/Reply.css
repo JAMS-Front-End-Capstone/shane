@@ -1,0 +1,138 @@
+textarea {
+  font-family:inherit;
+  }
+
+  .ui_social_avatar {
+  background-color:#fff;
+  border-radius:100%;
+  display:block;
+  height:48px;
+  overflow:hidden;
+  position:relative;
+  transition:width 50ms,height 50ms;
+  width:48px;
+  }
+
+  .ui_social_avatar:before {
+  border:3px solid #fff;
+  border-radius:inherit;
+  bottom:0;
+  left:0;
+  right:0;
+  top:0;
+  }
+
+  .ui_social_avatar:after,.ui_social_avatar:before {
+  box-sizing:border-box;
+  content:"";
+  position:absolute;
+  }
+
+  .ui_social_avatar:after {
+  border:1px solid rgba(0,0,0,.1);
+  border-radius:inherit;
+  bottom:3px;
+  left:3px;
+  right:3px;
+  top:3px;
+  }
+
+  .ui_social_avatar.inline {
+  display:inline-block;
+  }
+
+  .ui_social_avatar.xtra-small {
+  border-radius:100%;
+  height:30px;
+  height:28px;
+  width:30px;
+  width:28px;
+  }
+
+  .ui_social_avatar.xtra-small:before {
+  border-width:2px;
+  }
+
+  ._2HBN-k68 {
+  display:inline-block;
+  vertical-align:bottom;
+  }
+
+  ._2JndpOur {
+  fill:currentColor;
+  }
+
+  ._3x5_awTA {
+  -ms-flex-negative:0;
+  -webkit-flex-shrink:0;
+  display:block;
+  flex-shrink:0;
+  }
+
+  .BvCdigLq {
+  -ms-flex-align:center;
+  -ms-flex-pack:center;
+  -webkit-align-items:center;
+  -webkit-justify-content:center;
+  align-items:center;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  height:100%;
+  justify-content:center;
+  width:100%;
+  }
+
+  ._1VRk7fnV {
+  border:1px solid #e0e0e0;
+  border-radius:2px;
+  box-sizing:border-box;
+  font-family:inherit;
+  font-size:14px;
+  padding:12px;
+  }
+
+  ._1VRk7fnV:focus {
+  border-color:black;
+  outline:1px solid black;
+  }
+
+  ._25dajjyJ {
+  border:solid #e0e0e0;
+  border-width:0 0 1px;
+  font-size:16px;
+  line-height:20px;
+  padding:16px 24px 12px;
+  color: #2c2c2c;
+  font-family: 'Trip Sans', Arial, sans-serif !important;
+  margin: 0;
+
+  }
+
+  ._25dajjyJ:last-child {
+  border:0 solid #e0e0e0;
+  }
+
+  ._2nK73A9w {
+  box-sizing:border-box;
+  padding:6px;
+  resize:none;
+  width:100%;
+  }
+
+  ._2nK73A9w:focus {
+  border-color:#000;
+  outline:1px solid #000;
+  }
+
+  ._2MtEN6up {
+  -ms-flex:1;
+  -webkit-flex:1;
+  flex:1;
+  }
+
+  ._2mamHENZ {
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  }

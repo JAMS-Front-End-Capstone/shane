@@ -45,7 +45,7 @@
   .ui_icon.forums:before{content:"\e006";}
   .ui_icon.pencil-paper:before {content:"\e00e";}
   .ui_icon.forums:before {content:"\e006";}
-
+  .ui_icon.caret-down:before {content:"\e04a";}
 
   div {
   margin:0;

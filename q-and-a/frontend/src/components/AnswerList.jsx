@@ -9,7 +9,6 @@ class AnswerList extends React.Component {
     console.log('rendering Component_AnswerList');
     return (
       <span className="Component_AnswerList">
-        <p>AnswerList!</p>
         <Answer />
       </span>
     );

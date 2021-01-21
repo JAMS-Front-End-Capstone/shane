@@ -1,6 +1,6 @@
 import React from 'react';
 import Question from './Question.jsx';
-
+import './css/QuestionList.css';
 class QuestionList extends React.Component {
   constructor(props) {
     super(props);
@@ -9,10 +9,9 @@ class QuestionList extends React.Component {
   render() {
     console.log('rendering Component_QuestionList');
     return (
-      <span className="Component_QuestionList">
-        <p>QuestionList!</p>
+      <div className="Component_QuestionList">
         <Question />
-      </span>
+      </div>
     );
   }
 }
