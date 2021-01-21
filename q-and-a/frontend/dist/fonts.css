@@ -43,6 +43,9 @@
   }
   .ui_icon.camera:before{content:"\e010";}
   .ui_icon.forums:before{content:"\e006";}
+  .ui_icon.pencil-paper:before {content:"\e00e";}
+  .ui_icon.forums:before {content:"\e006";}
+
 
   div {
   margin:0;

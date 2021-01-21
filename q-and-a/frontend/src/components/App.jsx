@@ -1,5 +1,6 @@
 import React from 'react';
 import QuestionList from './QuestionList.jsx';
+import Navigation from './Navigation.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import axios from 'axios';
@@ -24,13 +25,14 @@ class App extends React.Component {
         console.log('Module 4: App.getElementsFromAPI: ERROR!', error);
       });
   }
-  componentWillMount() {
+  componentDidMount() {
     this.getDataFromAPI();
   }
   render() {
     console.log('rendering App');
     return (
       <div className="Q-and-A_Container">
+        <Navigation />
         <Header />
         <QuestionList />
         <Footer />
