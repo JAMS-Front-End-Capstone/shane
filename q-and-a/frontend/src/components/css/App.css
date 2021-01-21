@@ -856,6 +856,12 @@ div {
 .ui_icon.single-chevron-right:before {
   content: "\e03b"
 }
+.ui_icon.thumbs-up:before {
+  content:"\e13a";
+}
+.ui_icon.thumbs-down:before{
+  content:"\e13b";
+}
 .ui_container {
   padding: 0 24px;
   max-width: 1280px
@@ -875,4 +881,30 @@ html body {
   font-family: 'Trip Sans',Arial,sans-serif;
   webkit-font-smoothing: antialiased;
   margin: 0
+}
+.votes-container{
+  -ms-flex-align :center;
+  -webkit-align-items: center;
+  align-items: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-top: 8px;
+}
+.votes-icon-container{
+  color: #bababa;
+  cursor: pointer;
+  font-size: 18px;
+}
+.votes-icon-container:hover{
+  color:#000;
+}
+.votes-qty-container{
+  color:#474747;
+  font-size:12px;
+  font-weight:700;
+  margin:0 8px;
+  min-width:30px;
+  text-align:center;
 }

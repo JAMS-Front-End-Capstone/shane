@@ -14,7 +14,7 @@ class Navigation extends React.Component {
               <span className="ui_icon pencil-paper navigation-section-icon">
               </span>
               <span className="">
-                <span className="navigation-qty">128</span>
+                <span className="navigation-qty">40</span>
                 <span className="navigation-text">Reviews</span>
               </span>
             </span>
@@ -22,7 +22,7 @@ class Navigation extends React.Component {
               <span className="ui_icon forums navigation-section-icon">
               </span>
               <span className="">
-                <span className="navigation-qty">3</span>
+                <span className="navigation-qty">{this.props.reviewCount}</span>
                 <span className="navigation-text">Q&amp;A</span>
               </span>
             </span>

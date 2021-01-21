@@ -5,11 +5,11 @@ class QuestionList extends React.Component {
     super(props);
     this.state = {};
   }
-  render() {
+  render(props) {
     console.log('rendering Component_QuestionList');
     return (
       <div className="Component_QuestionList">
-        <Question />
+        <Question elements={this.props.elements}/>
       </div>
     );
   }
