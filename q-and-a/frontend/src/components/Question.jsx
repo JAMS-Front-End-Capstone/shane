@@ -1,7 +1,6 @@
 import React from 'react';
 import AnswerList from './AnswerList.jsx';
 import Reply from './Reply.jsx';
-import './css/Question.css';
 class Question extends React.Component {
   constructor(props) {
     super(props);

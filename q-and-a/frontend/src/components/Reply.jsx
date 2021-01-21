@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/Reply.css';
 class Reply extends React.Component {
   constructor(props) {
     super(props);

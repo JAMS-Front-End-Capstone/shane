@@ -1,5 +1,4 @@
 import React from 'react';
-import Answer from './Answer.jsx';
 class AnswerList extends React.Component {
   constructor(props) {
     super(props);

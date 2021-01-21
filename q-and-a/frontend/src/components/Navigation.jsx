@@ -1,5 +1,4 @@
 import React from 'react';
-import './css/Navigation.css';
 class Navigation extends React.Component {
   constructor(props) {
     super(props);
