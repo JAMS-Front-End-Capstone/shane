@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering App');
+    // console.log('Rendering App');
     return (
       <span id="Component_App">
         <Header />

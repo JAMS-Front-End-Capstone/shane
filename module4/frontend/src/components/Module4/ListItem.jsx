@@ -8,7 +8,7 @@ class ListItem extends React.Component {
     };
   }
   render(props) {
-    console.log('rendering Module4-ListItem');
+    // console.log('Rendering Module4-ListItem');
     if (this.props.elements.length > 0) {
       const records = this.props.elements.map((value, index, collection) => {
         const reviewBubbleCount = 'ui_bubble_rating bubble_' + value.reviewRating;

@@ -7,7 +7,7 @@ class AdvertisingBanner extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering Banner');
+    // console.log('Rendering Banner');
     return (
       <span id="Component_AdvertisingBanner">
         <div className="Header global-header">

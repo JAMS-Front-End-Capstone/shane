@@ -15,7 +15,7 @@ class Header extends React.Component {
     document.getElementById('health-notice').style.display = 'none';
   }
   render() {
-    console.log('rendering Header');
+    // console.log('Rendering Header');
     return (
       <span id="Component_Header">
         <HealthBanner />

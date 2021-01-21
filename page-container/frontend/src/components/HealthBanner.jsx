@@ -9,7 +9,7 @@ class HealthBanner extends React.Component {
     document.getElementById('health-notice').style.display = 'none';
   }
   render() {
-    console.log('rendering HealthBanner');
+    // console.log('Rendering HealthBanner');
     return (
       <div id="Component_HealthBanner" className="Component_HealthBanner">
         <div className="health-notice" id="health-notice" onClick={this.hideHealthNotice}>

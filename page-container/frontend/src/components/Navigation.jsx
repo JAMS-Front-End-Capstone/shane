@@ -5,7 +5,7 @@ class Navigation extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering Navigation');
+    // console.log('Rendering Navigation');
     return (
       <span id="Component_Navigation" className="Component_Navigation">
         <div className="_1wVsKXvB">

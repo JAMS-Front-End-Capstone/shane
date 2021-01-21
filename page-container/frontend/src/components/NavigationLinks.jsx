@@ -5,7 +5,7 @@ class NavigationLinks extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering NavigationLinks');
+    // console.log('Rendering NavigationLinks');
     return (
       <span id="Component_NavigationLinks">
         <div className="navigation-links">

@@ -5,7 +5,7 @@ class NavigationDropdown extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering NavigationDropdown');
+    // console.log('Rendering NavigationDropdown');
     return (
       <span id="Component_NavigationDropdown" className="Component_NavigationDropdown">
 
