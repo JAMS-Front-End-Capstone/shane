@@ -5,7 +5,7 @@ class Footer extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering Component_Footer');
+    // console.log('rendering Component_Footer');
     return (
       <div className="Component_Footer">
         <div className="footer-item">

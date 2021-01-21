@@ -8,7 +8,7 @@ class Questions extends React.Component {
     this.state = {};
   }
   render(props) {
-    console.log('rendering Component_Question');
+    // console.log('rendering Component_Question');
     let reviews = this.props.elements.map((value, index, collection) => {
       let postDate = new Date(value.date);
       let formattedDateString = postDate.toLocaleDateString('en-US', {

@@ -7,13 +7,13 @@ class Answers extends React.Component {
   render() {
     let answers = '';
     const showAllAnswers = () => {
-      if (this.props.numOfReplies > 1) {
-        return (
-          <a href="#" className="show-all-answers-container">Show all answers</a>
-        );
-      } else {
-        return ( <span></span> );
-      }
+      // if (this.props.numOfReplies > 1) {
+      //   return (
+      //     <a href="#" className="show-all-answers-container">Show all answers</a>
+      //   );
+      // } else {
+      return ( <span></span> );
+      // }
     };
 
     if (this.props.numOfReplies > 0) {
@@ -24,7 +24,7 @@ class Answers extends React.Component {
           year: 'numeric'
         });
 
-        console.log('rendering Component_Answers');
+        // console.log('rendering Component_Answers');
         return (
           <div className="Component_Answer" key={value._id}>
             <div className="profile-container">
@@ -60,14 +60,15 @@ class Answers extends React.Component {
             <div className="message-body-container">
               <div className="translation-container">
                 <button className="ui_button secondary small">Google Translation</button>
-              </div>{value.body}<form className="votes-container">
-                <span className="thumb-icon-container">
+              </div>{value.body}
+              <form className="votes-container">
+                <span className="votes-icon-container">
                   <span className="ui_icon thumbs-up ">
                   </span>
                 </span>
                 <span className="votes-qty-container">{value.helpfulScore} votes</span>
                 <span className="votes-icon-container">
-                  <span className="ui_icon thumbs-down">
+                  <span className="ui_icon thumbs-down ">
                   </span>
                 </span>
               </form>

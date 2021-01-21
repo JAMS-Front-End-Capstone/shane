@@ -79,7 +79,6 @@ a {
 }
 .ui_icon:before {
   font-size: inherit;
-  speak: none
 }
 .show-all-answers-container,
 .ui_button {
@@ -799,8 +798,6 @@ a {
 }
 .ui_icon:before {
   font-size: inherit;
-  -ms-transform: rotate(-.001deg);
-  speak: none;
   font-style: normal;
   font-weight: 400;
   font-variant: normal;
@@ -894,7 +891,6 @@ div {
 
 html body {
   font-family: 'Trip Sans',Arial,sans-serif;
-  webkit-font-smoothing: antialiased;
   margin: 0
 }
 .votes-container{

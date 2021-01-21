@@ -5,7 +5,7 @@ class Header extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering Component_Header');
+    // console.log('rendering Component_Header');
     return (
       <div className="Component_Header">
         <div className="header-container">

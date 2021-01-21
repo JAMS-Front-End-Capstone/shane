@@ -5,7 +5,7 @@ class Reply extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering Component_Reply');
+    // console.log('rendering Component_Reply');
     return (
       <span className="Component_Reply">
         <div className="main-container">
