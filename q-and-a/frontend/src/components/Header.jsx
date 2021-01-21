@@ -8,17 +8,17 @@ class Header extends React.Component {
     console.log('rendering Component_Header');
     return (
       <div className="Component_Header">
-        <div class="_7PJap-I0">
-          <div class="_3n8-XHcx">
-            <div class="_2i8Npzw1">
-              <h2 class="_1VLgXtcm">Questions &amp; Answers</h2>
-              <div class="_3W6yB1_L">
-                <div class="_1eN13RvW">
-                  <button class="ui_button primary">Ask a question</button>
+        <div className="header-container">
+          <div className="_3n8-XHcx">
+            <div className="_2i8Npzw1">
+              <h2 className="questions-and-answers">Questions &amp; Answers</h2>
+              <div className="ask-a-question-div">
+                <div className="ask-a-question-container">
+                  <button className="ui_button primary">Ask a question</button>
                   <div>
                     <div>
-                      <div class="_3rGPLWMi">
-                        <span class="ui_icon caret-down ">
+                      <div className="down-icon-container">
+                        <span className="ui_icon caret-down ">
                         </span>
                       </div>
                     </div>
