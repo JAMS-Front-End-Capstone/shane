@@ -63,7 +63,7 @@ var App = /*#__PURE__*/function (_React$Component) {
   _createClass(App, [{
     key: "render",
     value: function render() {
-      console.log('rendering App');
+      // console.log('Rendering App');
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
         key: "App"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Module4_List_jsx__WEBPACK_IMPORTED_MODULE_4__.default, null));
@@ -130,7 +130,7 @@ var Module1 = /*#__PURE__*/function (_React$Component) {
   _createClass(Module1, [{
     key: "render",
     value: function render() {
-      console.log('rendering Module1');
+      // console.log('Rendering Module1');
       return /*#__PURE__*/React.createElement("div", {
         className: "Module1",
         key: "Module1"
@@ -198,7 +198,7 @@ var Module2 = /*#__PURE__*/function (_React$Component) {
   _createClass(Module2, [{
     key: "render",
     value: function render() {
-      console.log('rendering Module2');
+      // console.log('Rendering Module2');
       return /*#__PURE__*/React.createElement("div", {
         className: "Module2",
         key: "Module1"
@@ -266,7 +266,7 @@ var Module3 = /*#__PURE__*/function (_React$Component) {
   _createClass(Module3, [{
     key: "render",
     value: function render() {
-      console.log('rendering Module3');
+      // console.log('Rendering Module3');
       return /*#__PURE__*/React.createElement("div", {
         className: "Module3",
         key: "Module1"
@@ -334,7 +334,7 @@ var FavIcon = /*#__PURE__*/function (_React$Component) {
   _createClass(FavIcon, [{
     key: "render",
     value: function render(props) {
-      console.log('rendering Module4-ListItem');
+      // console.log('Rendering Module4-ListItem');
       return /*#__PURE__*/React.createElement("div", {
         className: "saveToTripWrapper"
       }, /*#__PURE__*/React.createElement("link", {
@@ -574,8 +574,7 @@ var ListItem = /*#__PURE__*/function (_React$Component) {
   _createClass(ListItem, [{
     key: "render",
     value: function render(props) {
-      console.log('rendering Module4-ListItem');
-
+      // console.log('Rendering Module4-ListItem');
       if (this.props.elements.length > 0) {
         var records = this.props.elements.map(function (value, index, collection) {
           var reviewBubbleCount = 'ui_bubble_rating bubble_' + value.reviewRating;
