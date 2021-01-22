@@ -9,6 +9,7 @@
 	border-color: #e0e0e0;
 	background-color: #f2f2f2;
 	-webkit-font-smoothing: antialiased;
+	height:349px;
 }
 
 @font-face {
@@ -26,14 +27,16 @@
 	box-sizing:border-box;
 	color:#2c2c2c;
 	cursor:pointer;
-	display:inline-block;
+	display:block;
 	font-family:Arial,Tahoma,Bitstream Vera Sans,sans-serif;
 	font-size:medium;
-	margin:0 4px;
+	margin-right: 4px;
+	margin-left: 4px;
 	padding:0;
 	position:relative;
 	vertical-align:top;
 	width:180px;
+	height:199px;
 }
 
 .ui_container {
@@ -58,7 +61,7 @@
 
 .ui_section {
 	display: block;
-	height: 263px;
+	height: 280px;
 	font-size: 16px;
 	color: #2c2c2c;
 	background-color: #fff;
@@ -68,6 +71,7 @@
 	margin: 0 0 24px;
 	padding: 16px 24px;
 	border-radius: 2px;
+
 }
 
 .prw_shelves_shelf_widget {
@@ -76,6 +80,7 @@
 	margin: 0;
 	padding: 0;
 	box-shadow: none;
+	height:300px;
 }
 
 .attractions_recently_viewed {
@@ -83,6 +88,7 @@
 	color: #2c2c2c;
 	margin: 0;
 	padding: 0;
+
 }
 
 .shelf_header {
@@ -137,12 +143,12 @@
 }
 
 .shelf_item_container {
-	font-size: medium;
-	color: #2c2c2c;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	overflow-x: auto;
+	margin:0;
+	padding:0;
+	display:flex;
+	overflow-x:auto;
+	height:240px;
+
 }
 
 .prw_shelves_attraction_shelf_item_widget {

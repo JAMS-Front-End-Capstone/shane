@@ -6,7 +6,7 @@ class Module1 extends React.Component {
     this.state = {};
   }
   render() {
-    console.log('rendering Module1');
+    // console.log('Rendering Module1');
     return (
       <div className="Module1" key="Module1">
         Module1 Stub

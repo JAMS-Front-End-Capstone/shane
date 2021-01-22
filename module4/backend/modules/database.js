@@ -26,7 +26,7 @@ mongoose.connection.once('open', logConnectionResult);
 
 const schema = {
   name: String,
-  cost: Number,
+  cost: String,
   tagline: String,
   reviewQty: Number,
   reviewRating: Number,
@@ -42,10 +42,10 @@ const createSeedRecord = () => {
     const propertyTypeArray = ['Beaches', 'Jet Boating', 'Snorkeling', 'Boat Rentals', 'Tubing', 'Sightseeing Tours', 'Boat Tours', 'Excursions', 'Day Cruises', 'Shark Diving'];
     const data = {
       name: faker.company.companyName(),
-      cost: (Math.floor(Math.random() * 500 + 60) + (Math.floor(Math.random() * 99 + 1)) / 100),
+      cost: (Math.floor(Math.random() * 500 + 60) + (Math.floor(Math.random() * 99 + 1)) / 100).toFixed(2),
       tagline: faker.lorem.words(),
       reviewQty: Math.floor(Math.random() * 2300 + 1),
-      reviewRating: (Math.ceil((Math.random() * 50 + 1) / 5) * 5),
+      reviewRating: (Math.ceil((Math.random() * 45 + 1) / 5) * 5),
       costDetail: 'adult',
       companyURL: 'http://www.google.com/',
       propertyType: propertyTypeArray[Math.floor((Math.random() * propertyTypeArray.length))],
@@ -78,5 +78,7 @@ module.exports.seedDatabase = (databaseModel, qtyOfRecords = 5) => {
     }
   });
 };
+
+module.exports.seedDatabase(Model);
 
 module.exports.Model = Model;
