@@ -58,7 +58,7 @@ const createSeedRecord = () => {
 
 module.exports.seedDatabase = (databaseModel, qtyOfRecords = 5) => {
   return new Promise ((resolve, reject) => {
-    databaseModel.collection.drop();
+    // databaseModel.collection.drop();
     let anErrorOccured = false;
     for (let i = 0; i < qtyOfRecords; i++) {
       if (anErrorOccured) { break; }
