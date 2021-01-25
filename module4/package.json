@@ -7,7 +7,7 @@
     "backend": "nodemon backend/server.js",
     "frontend": "npm run webpack & npm run live-server",
     "webpack": "webpack --config webpack.config.js --watch -d source-map",
-    "live-server": "live-server --watch=frontend/dist --wait=1000 frontend/dist",
+    "live-server": "live-server --port=3005 --watch=frontend/dist --wait=1000 frontend/dist",
     "start": "npm run backend & npm run frontend",
     "test": "jest"
   },
