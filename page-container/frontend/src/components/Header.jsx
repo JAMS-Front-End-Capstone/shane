@@ -18,6 +18,8 @@ class Header extends React.Component {
     // console.log('Rendering Header');
     return (
       <span id="Component_Header">
+        <link rel="stylesheet" href="/fonts.css"></link>
+
         <HealthBanner />
         <Navigation />
         <NavigationDropdown />

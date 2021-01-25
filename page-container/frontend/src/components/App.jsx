@@ -13,14 +13,17 @@ class App extends React.Component {
     // console.log('Rendering App');
     return (
       <span id="Component_App">
+        <link rel="stylesheet" href="/fonts.css"></link>
         <Header />
         <AdvertisingBanner />
         <div className="main">
           <div className="page">
-
+            <div id="attraction-overview"></div>
+            <div id="review"></div>
+            <div id="q-and-a"></div>
+            <div id="related"></div>
           </div>
           <div className="page-divider"></div>
-
         </div>
         <Footer />
       </span>

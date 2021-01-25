@@ -22,7 +22,7 @@ class Module4List extends React.Component {
       });
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.getElementsFromAPI();
   }
   render() {

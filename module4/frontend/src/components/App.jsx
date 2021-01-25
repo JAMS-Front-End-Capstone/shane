@@ -1,7 +1,4 @@
 import React from 'react';
-import Module1 from './Module1.jsx';
-import Module2 from './Module2.jsx';
-import Module3 from './Module3.jsx';
 import Module4List from './Module4/List.jsx';
 
 class App extends React.Component {
@@ -12,7 +9,7 @@ class App extends React.Component {
   render() {
     // console.log('Rendering App');
     return (
-      <div key="App">
+      <div key="Module4">
         <Module4List />
       </div>
     );
