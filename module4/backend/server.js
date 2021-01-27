@@ -7,7 +7,7 @@ const controller = require(path.join(__dirname, 'modules', 'controllers.js'));
 // express
 const express = require('express');
 const app = express();
-const port = 4005;
+const port = 3005;
 
 // cors
 const cors = require('cors');
@@ -22,7 +22,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 // static hosting
-app.use('/public', express.static(path.join(__dirname, 'public')));
+app.use('/related', express.static(path.join(__dirname, 'related')));
 
 // routers
 app.get('/API/retrieve', controller.handleAPIrequest);
