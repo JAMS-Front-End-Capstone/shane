@@ -7,7 +7,7 @@ import Questions from './Questions.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import axios from 'axios';
-import './css/App.css';
+import classes from './css/App.css';
 
 class App extends React.Component {
   constructor(props) {

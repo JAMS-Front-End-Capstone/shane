@@ -5,8 +5,6 @@ class FavIcon extends React.Component {
     this.state = {};
   }
   render(props) {
-    // console.log('Rendering Module4-ListItem');
-
     return (
       <div className="saveToTripWrapper">
         <link rel="stylesheet" href="module4-FavIcon.css"></link>

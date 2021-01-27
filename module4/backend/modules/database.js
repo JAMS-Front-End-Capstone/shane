@@ -56,7 +56,7 @@ const createSeedRecord = () => {
   });
 };
 
-module.exports.seedDatabase = (databaseModel, qtyOfRecords = 5) => {
+module.exports.seedDatabase = (databaseModel = Model, qtyOfRecords = 5) => {
   return new Promise ((resolve, reject) => {
     databaseModel.collection.drop((error) => {
       console.log('Cannot drop database because it does not exist');
@@ -80,7 +80,5 @@ module.exports.seedDatabase = (databaseModel, qtyOfRecords = 5) => {
     }
   });
 };
-
-module.exports.seedDatabase(Model);
 
 module.exports.Model = Model;

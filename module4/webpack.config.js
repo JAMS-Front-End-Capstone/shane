@@ -4,10 +4,14 @@ module.exports = {
   entry: path.resolve(__dirname, 'frontend', 'src', 'index.jsx'),
   output: {
     path: path.resolve(__dirname, 'frontend', 'dist'),
-    filename: 'bundle-3005.js'
+    filename: 'related-bundle.js'
   },
   module: {
     rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
       {
         test: /\.(js|jsx)$/,
         exclude: ['/node_modules/'],
