@@ -49,7 +49,7 @@ const createSeedRecord = () => {
       costDetail: 'adult',
       companyURL: 'http://www.google.com/',
       propertyType: propertyTypeArray[Math.floor((Math.random() * propertyTypeArray.length))],
-      image: '/images/m4-sample' + Math.floor(Math.random() * 9 + 1) + '.jpg',
+      image: 'images/m4-sample' + Math.floor(Math.random() * 9 + 1) + '.jpg',
     };
     const output = new Model(data);
     resolve(output);
@@ -59,7 +59,7 @@ const createSeedRecord = () => {
 module.exports.seedDatabase = (databaseModel = Model, qtyOfRecords = 5) => {
   return new Promise ((resolve, reject) => {
     databaseModel.collection.drop((error) => {
-      console.log('Cannot drop database because it does not exist');
+
     });
     let anErrorOccured = false;
     for (let i = 0; i < qtyOfRecords; i++) {

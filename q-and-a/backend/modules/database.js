@@ -50,7 +50,7 @@ const createSeedRecord = () => {
   return new Promise((resolve, reject) => {
 
     const generateContributor = () => {
-      let image = `/avatars/${Math.floor(Math.random() * (8 - 1 + 1) )}.jpg`;
+      let image = `avatars/${Math.floor(Math.random() * (8 - 1 + 1) )}.jpg`;
       return {
         name: faker.internet.userName(),
         imageUrl: image,
@@ -112,8 +112,6 @@ module.exports.seedDatabase = (qtyOfRecords = 30) => {
     }
   });
 };
-
-module.exports.seedDatabase();
 
 module.exports.postModel = postModel;
 module.exports.authorModel = authorModel;

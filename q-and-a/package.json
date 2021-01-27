@@ -4,13 +4,15 @@
   "description": "q&a component",
   "main": "index.js",
   "scripts": {
-    "backend": "nodemon backend/server.js",
-    "frontend": "npm run webpack & npm run live-server",
-    "webpack": "webpack --config webpack.config.js --watch -d source-map",
+    "nodemon": "nodemon backend/server.js",
+    "frontend": "npm run build-dev & npm run live-server",
+    "build-dev": "webpack --config webpack.config.js --watch -d source-map",
+    "build": "webpack --config webpack.config.js",
     "live-server": "live-server --watch=frontend/dist --port=3004 --wait=1000 frontend/dist",
-    "start": "npm run backend & npm run frontend",
-    "seed": "node backend/modules/database.js",
-    "test": "jest"
+    "start": "node backend/server.js",
+    "seed": "node backend/modules/seed.js",
+    "test": "jest",
+    "postinstall": "echo Please run 'npm run seed' to seed the database."
   },
   "repository": {
     "type": "git",

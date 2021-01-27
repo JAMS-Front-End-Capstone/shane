@@ -1,8 +1,8 @@
 const React = require('react');
 import ListItem from './ListItem.jsx';
 import axios from 'axios';
-const API_SERVER_URL = 'http://localhost:4005/API/retrieve';
-const APT_RESEED_URL = 'http://localhost:4005/API/seedDatabase';
+const API_SERVER_URL = '/API/retrieve';
+const APT_RESEED_URL = '/API/seedDatabase';
 
 class List extends React.Component {
   constructor(props) {
