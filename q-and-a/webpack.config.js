@@ -4,7 +4,7 @@ module.exports = {
   entry: path.resolve(__dirname, 'frontend', 'src', 'index.jsx'),
   output: {
     path: path.resolve(__dirname, 'frontend', 'dist'),
-    filename: 'bundle-3004.js'
+    filename: 'q-and-a-bundle.js'
   },
   module: {
     rules: [
