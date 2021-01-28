@@ -4,11 +4,11 @@
   "description": "q&a component",
   "main": "index.js",
   "scripts": {
-    "nodemon": "nodemon backend/server.js",
+    "backend": "nodemon backend/server.js",
     "frontend": "npm run build-dev & npm run live-server",
     "build-dev": "webpack --config webpack.config.js --watch -d source-map",
     "build": "webpack --config webpack.config.js",
-    "live-server": "live-server --watch=frontend/dist --port=3004 --wait=1000 frontend/dist",
+    "live-server": "live-server --watch=frontend/dist --port=8081 --wait=1000 frontend/dist",
     "start": "node backend/server.js",
     "seed": "node backend/modules/seed.js",
     "test": "jest",
