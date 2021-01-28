@@ -1,0 +1,36 @@
+version: '3.4'
+
+networks:
+  related:
+    driver: bridge
+
+services:
+    related-api:
+      ports:
+        - 3005:3005
+      build:
+        context: './'
+      env_file:
+        - backend.env
+      networks:
+        - related
+      depends_on:
+        related-database:
+          condition: service_healthy
+      healthcheck:
+          test: ["CMD", "node" , "healthcheck.js"]
+          timeout: 3s
+          retries: 20
+
+    related-database:
+      ports:
+        - 33517:27017
+      build:
+        context: './database/'
+      networks:
+        - related
+      healthcheck:
+          test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/csv --quiet
+          timeout: 5s
+          retries: 20
+      restart: on-failure

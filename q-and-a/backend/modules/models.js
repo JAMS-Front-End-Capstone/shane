@@ -1,9 +1,9 @@
 const path = require('path');
 const db = require(path.join(__dirname, 'database.js'));
 
-module.exports.returnAllRecords = () => {
+module.exports.returnAllRecords = (terms) => {
   return new Promise((resolve, reject) => {
-    db.postModel.find({}, (error, data) => {
+    db.postModel.find(terms, (error, data) => {
       if (error) {
         reject(error);
       } else {

@@ -7,7 +7,7 @@ const controller = require(path.join(__dirname, 'modules', 'controllers.js'));
 // express
 const express = require('express');
 const app = express();
-const port = 3005;
+const port = process.env.PORT || 3005;
 
 // cors
 const cors = require('cors');
@@ -26,6 +26,7 @@ app.use('/related', express.static(path.join(__dirname, 'related')));
 
 // routers
 app.get('/API/retrieve', controller.handleAPIrequest);
+app.get('/API/retrieve/:id', controller.handleAPIrequest);
 app.get('/API/seedDatabase', controller.handleDatabaseSeeding);
 
 // listeners
