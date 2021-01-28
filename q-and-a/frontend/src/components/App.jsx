@@ -18,22 +18,19 @@ class App extends React.Component {
     this.getDataFromAPI = this.getDataFromAPI.bind(this);
   }
   getDataFromAPI() {
-    // console.log('App.getDataFromAPI starting...');
     axios.get(API_SERVER_URL)
       .then(({ data }) => {
         if (data.length === 0) { console.log('Module q-and-a: LiAppst.getElementsFromAPI: ERROR: Received zero records from API server. Check database contents.'); }
         this.setState( { elements: data.splice(0, QTY_OF_REVIEWS_TO_DISPLAY) } );
       })
       .catch(function (error) {
-        // console.log('Module q-and-a: App.getElementsFromAPI: ERROR!', error);
+        console.log('Module q-and-a: App.getElementsFromAPI: ERROR!', error);
       });
   }
   componentDidMount() {
     this.getDataFromAPI();
   }
   render() {
-    // console.log('rendering App');
-
     if (this.state.elements.length === 0) {
       return (
         <div>Loading...</div>

@@ -1,4 +1,5 @@
-*bundle*
+*bundle.js*
+bundle*
 node_modules
 .DS_Store
 
