@@ -80,9 +80,8 @@ const createSeedRecord = () => {
 
 const seedDatabase = (qtyOfRecords = 30) => {
   return new Promise ((resolve, reject) => {
-    postModel.collection.drop()
-      .catch((error) => {
-      });
+    postModel.collection.drop((error) => {
+    });
     let anErrorOccured = false;
     for (let i = 0; i < qtyOfRecords; i++) {
       if (anErrorOccured) { break; }
@@ -91,14 +90,13 @@ const seedDatabase = (qtyOfRecords = 30) => {
           postModel.create(record);
         })
         .catch((error) => {
-          console.log('Seeding error:', error);
           anErrorOccured = true;
         });
     }
     if (anErrorOccured) {
       reject('Error seeding database. Check connection!');
     } else {
-      let output = 'SUCCESS: Wiped and Inserted ' + qtyOfRecords + ' records in database.';
+      let output = 'Backend: Seeded ' + qtyOfRecords + ' records in database.';
       resolve(output);
     }
   });
@@ -127,7 +125,10 @@ mongoose.connection.on('error', (err) => {
 });
 
 mongoose.connection.once('open', logConnectionResult);
-mongoose.connect(databaseURL, options);
+mongoose.connect(databaseURL, options)
+  .catch((error) => {
+    console.log('error connecting to database:', error);
+  });
 
 module.exports.postModel = postModel;
 module.exports.authorModel = authorModel;
