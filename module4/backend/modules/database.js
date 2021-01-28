@@ -3,29 +3,21 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-const url = 'mongodb://localhost/related';
+let needToSeedDatabase = false;
+let databaseURL = 'mongodb://localhost/related';
 const options = {
-
   useNewUrlParser: true,
   useUnifiedTopology: true
 };
-mongoose.connect(url, options);
 
-const logConnectionResult = (error) => {
-  if (error) {
-    console.log('DB Connection Error!', error);
-  } else {
-    console.log('Backend: DB Connection Successful!');
-  }
-};
-
-mongoose.connection.on('error', (err) => {
-  errorHandler.log(err);
-});
-
-mongoose.connection.once('open', logConnectionResult);
+if (process.env.NODE_ENV === 'production') {
+  databaseURL = process.env.databaseURI;
+  options.user = process.env.databaseUser;
+  options.pass = process.env.databasePass;
+}
 
 const schema = {
+  itemID: Number,
   name: String,
   cost: String,
   tagline: String,
@@ -36,12 +28,13 @@ const schema = {
   propertyType: String,
   image: String
 };
-const Model = mongoose.model('m4-property', schema);
+const Model = mongoose.model('property', schema);
 
 const createSeedRecord = () => {
   return new Promise((resolve, reject) => {
     const propertyTypeArray = ['Beaches', 'Jet Boating', 'Snorkeling', 'Boat Rentals', 'Tubing', 'Sightseeing Tours', 'Boat Tours', 'Excursions', 'Day Cruises', 'Shark Diving'];
     const data = {
+      itemID: 1,
       name: faker.company.companyName(),
       cost: (Math.floor(Math.random() * 500 + 60) + (Math.floor(Math.random() * 99 + 1)) / 100).toFixed(2),
       tagline: faker.lorem.words(),
@@ -60,7 +53,6 @@ const createSeedRecord = () => {
 module.exports.seedDatabase = (databaseModel = Model, qtyOfRecords = 5) => {
   return new Promise ((resolve, reject) => {
     databaseModel.collection.drop((error) => {
-
     });
     let anErrorOccured = false;
     for (let i = 0; i < qtyOfRecords; i++) {
@@ -81,5 +73,38 @@ module.exports.seedDatabase = (databaseModel = Model, qtyOfRecords = 5) => {
     }
   });
 };
+
+
+const logConnectionResult = (error) => {
+  if (error) {
+    console.log('DB Connection Error!', error);
+  } else {
+    Model.find({}, (error, data) => {
+      if (error) {
+        console.log('Backend: DB Connection Successful! But got error querying database:', error);
+      } else {
+        console.log('Backend: DB Connection Successful! Found', data.length, 'records in db.');
+        if (data.length === 0) {
+          console.log('Backend: DB has 0 records, flagging for automatic seeding.');
+        }
+      }
+    });
+  }
+};
+
+mongoose.connection.on('error', (err) => {
+  errorHandler.log(err);
+});
+
+mongoose.connection.once('open', logConnectionResult);
+
+mongoose.connect(databaseURL, options)
+  .catch((error) => {
+    console.log('error connecting to database:', error);
+  });
+
+if (needToSeedDatabase) {
+  module.exports.seedDatabase();
+}
 
 module.exports.Model = Model;

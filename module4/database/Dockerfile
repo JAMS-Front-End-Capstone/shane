@@ -5,5 +5,5 @@ ENV MONGO_INITDB_DATABASE: related
 LABEL name="related database"
 LABEL version="1.0"
 LABEL description="Provides mongo to backend"
-COPY schema.js /docker-entrypoint/initdb.d/
+COPY ["mongo-init.js", "/docker-entrypoint-initdb.d/"]
 EXPOSE 27017

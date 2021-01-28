@@ -11,8 +11,7 @@
     "live-server": "live-server --watch=frontend/dist --port=8081 --wait=1000 frontend/dist",
     "start": "node backend/server.js",
     "seed": "node backend/modules/seed.js",
-    "test": "jest",
-    "postinstall": "echo Please run 'npm run seed' to seed the database."
+    "test": "jest"
   },
   "repository": {
     "type": "git",
