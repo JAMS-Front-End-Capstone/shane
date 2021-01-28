@@ -5,6 +5,7 @@ const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
 const url = 'mongodb://localhost/qanda';
 const options = {
+
   useNewUrlParser: true,
   useUnifiedTopology: true
 };

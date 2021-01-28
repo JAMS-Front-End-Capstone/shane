@@ -3,8 +3,9 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-const url = 'mongodb://localhost/fec-module4';
+const url = 'mongodb://localhost/related';
 const options = {
+
   useNewUrlParser: true,
   useUnifiedTopology: true
 };
