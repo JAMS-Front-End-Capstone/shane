@@ -231,7 +231,6 @@ var App = /*#__PURE__*/function (_React$Component) {
     value: function getDataFromAPI() {
       var _this2 = this;
 
-      // console.log('App.getDataFromAPI starting...');
       axios__WEBPACK_IMPORTED_MODULE_5___default().get(API_SERVER_URL).then(function (_ref) {
         var data = _ref.data;
 
@@ -242,7 +241,8 @@ var App = /*#__PURE__*/function (_React$Component) {
         _this2.setState({
           elements: data.splice(0, QTY_OF_REVIEWS_TO_DISPLAY)
         });
-      })["catch"](function (error) {// console.log('Module q-and-a: App.getElementsFromAPI: ERROR!', error);
+      })["catch"](function (error) {
+        console.log('Module q-and-a: App.getElementsFromAPI: ERROR!', error);
       });
     }
   }, {
@@ -253,7 +253,6 @@ var App = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // console.log('rendering App');
       if (this.state.elements.length === 0) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", null, "Loading...");
       } else {
