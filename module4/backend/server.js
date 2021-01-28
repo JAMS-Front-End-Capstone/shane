@@ -26,6 +26,7 @@ app.use('/related', express.static(path.join(__dirname, 'related')));
 
 // routers
 app.get('/API/retrieve', controller.handleAPIrequest);
+app.get('/API/retrieve/:id', controller.handleAPIrequest);
 app.get('/API/seedDatabase', controller.handleDatabaseSeeding);
 
 // listeners

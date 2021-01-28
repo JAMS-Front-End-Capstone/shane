@@ -5,5 +5,5 @@ ENV MONGO_INITDB_DATABASE: qanda
 LABEL name="q-and-a database"
 LABEL version="1.0"
 LABEL description="Provides mongo to backend"
-COPY schema.js /docker-entrypoint/initdb.d/
+COPY ["mongo-init.js", "/docker-entrypoint-initdb.d/"]
 EXPOSE 27017

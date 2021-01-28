@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-let needToSeedDatabase = false;
 let databaseURL = 'mongodb://localhost/related';
 const options = {
   useNewUrlParser: true,
@@ -50,7 +49,7 @@ const createSeedRecord = () => {
   });
 };
 
-module.exports.seedDatabase = (databaseModel = Model, qtyOfRecords = 5) => {
+const seedDatabase = (databaseModel = Model, qtyOfRecords = 5) => {
   return new Promise ((resolve, reject) => {
     databaseModel.collection.drop((error) => {
     });
@@ -68,12 +67,11 @@ module.exports.seedDatabase = (databaseModel = Model, qtyOfRecords = 5) => {
     if (anErrorOccured) {
       reject('Error seeding database. Check connection!');
     } else {
-      let output = 'SUCCESS: Wiped and Inserted ' + qtyOfRecords + ' records in database.';
+      let output = 'Backend: Seeded ' + qtyOfRecords + ' records in database.';
       resolve(output);
     }
   });
 };
-
 
 const logConnectionResult = (error) => {
   if (error) {
@@ -86,6 +84,7 @@ const logConnectionResult = (error) => {
         console.log('Backend: DB Connection Successful! Found', data.length, 'records in db.');
         if (data.length === 0) {
           console.log('Backend: DB has 0 records, flagging for automatic seeding.');
+          seedDatabase();
         }
       }
     });
@@ -103,8 +102,5 @@ mongoose.connect(databaseURL, options)
     console.log('error connecting to database:', error);
   });
 
-if (needToSeedDatabase) {
-  module.exports.seedDatabase();
-}
-
+module.exports.seedDatabase = seedDatabase;
 module.exports.Model = Model;

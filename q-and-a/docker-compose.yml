@@ -1,34 +1,34 @@
 version: '3.4'
 
 networks:
-  related:
+  q-and-a:
     driver: bridge
 
 services:
-    related-api:
+    q-and-a-api:
       ports:
-        - 3005:3005
+        - 3004:3004
       build:
         context: './'
       env_file:
         - backend.env
       networks:
-        - related
+        - q-and-a
       depends_on:
-        related-database:
+        q-and-a-database:
           condition: service_healthy
       healthcheck:
           test: ["CMD", "node" , "healthcheck.js"]
           timeout: 3s
           retries: 20
 
-    related-database:
+    q-and-a-database:
       ports:
-        - 33517:27017
+        - 33417:27017
       build:
         context: './database/'
       networks:
-        - related
+        - q-and-a
       healthcheck:
           test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/csv --quiet
           timeout: 5s

@@ -3,27 +3,17 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-const url = 'mongodb://localhost/qanda';
+let databaseURL = 'mongodb://localhost/qanda';
 const options = {
-
   useNewUrlParser: true,
   useUnifiedTopology: true
 };
-mongoose.connect(url, options);
 
-const logConnectionResult = (error) => {
-  if (error) {
-    console.log('DB Connection Error!', error);
-  } else {
-    console.log('Backend: DB Connection Successful!');
-  }
-};
-
-mongoose.connection.on('error', (err) => {
-  errorHandler.log(err);
-});
-
-mongoose.connection.once('open', logConnectionResult);
+if (process.env.NODE_ENV === 'production') {
+  databaseURL = process.env.databaseURI;
+  options.user = process.env.databaseUser;
+  options.pass = process.env.databasePass;
+}
 
 const author = {
   name: String,
@@ -36,6 +26,7 @@ const author = {
 const authorModel = mongoose.model('author', author);
 
 const post = {
+  itemID: Number,
   author: Array,
   date: String,
   language: String,
@@ -63,6 +54,7 @@ const createSeedRecord = () => {
 
     const generatePost = (replyDate = '2019-04-23') => {
       let output = {
+        itemID: 1,
         author: generateContributor(),
         date: faker.date.between(replyDate, '2021-02-01'),
         language: 'English',
@@ -74,7 +66,6 @@ const createSeedRecord = () => {
 
     const output = new postModel(generatePost());
     let includeResponses = (Math.random() < 0.75);
-    let responsesArray = [];
 
     if (includeResponses) {
       let qtyOfResponses = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
@@ -87,11 +78,10 @@ const createSeedRecord = () => {
   });
 };
 
-module.exports.seedDatabase = (qtyOfRecords = 30) => {
+const seedDatabase = (qtyOfRecords = 30) => {
   return new Promise ((resolve, reject) => {
     postModel.collection.drop()
       .catch((error) => {
-        console.log('database.seedDatabase: database already dropped');
       });
     let anErrorOccured = false;
     for (let i = 0; i < qtyOfRecords; i++) {
@@ -114,6 +104,31 @@ module.exports.seedDatabase = (qtyOfRecords = 30) => {
   });
 };
 
+const logConnectionResult = (error) => {
+  if (error) {
+    console.log('DB Connection Error!', error);
+  } else {
+    postModel.find({}, (error, data) => {
+      if (error) {
+        console.log('Backend: DB Connection Successful! But got error querying database:', error);
+      } else {
+        console.log('Backend: DB Connection Successful! Found', data.length, 'records in db.');
+        if (data.length === 0) {
+          console.log('Backend: DB has 0 records, flagging for automatic seeding.');
+          seedDatabase();
+        }
+      }
+    });
+  }
+};
+
+mongoose.connection.on('error', (err) => {
+  errorHandler.log(err);
+});
+
+mongoose.connection.once('open', logConnectionResult);
+mongoose.connect(databaseURL, options);
+
 module.exports.postModel = postModel;
 module.exports.authorModel = authorModel;
-
+module.exports.seedDatabase = seedDatabase;

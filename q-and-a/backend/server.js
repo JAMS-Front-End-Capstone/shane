@@ -26,6 +26,7 @@ app.use('/avatars', express.static(path.join(__dirname, 'avatars')));
 
 // routers
 app.get('/API/retrieve', controller.handleAPIrequest);
+app.get('/API/retrieve/:id', controller.handleAPIrequest);
 app.get('/API/seedDatabase', controller.handleDatabaseSeeding);
 
 // listeners

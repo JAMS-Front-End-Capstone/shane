@@ -4,9 +4,8 @@ LABEL version="1.0"
 LABEL description="Provides node server for fec module: q-and-a"
 ENV NODE_ENV=production
 WORKDIR /usr/src/app
-COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 COPY ["backend", "backend"]
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "backend", "./"]
 RUN npm install
-ENV PATH /usr/src/app/node_modules/.bin:$path
 EXPOSE 3004
 CMD npm start

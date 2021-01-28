@@ -6,7 +6,11 @@ const db = require(path.join(__dirname, 'database.js'));
 
 
 module.exports.handleAPIrequest = (req, res, next) => {
-  model.returnAllRecords()
+  let terms = {};
+  if (req.params.id) {
+    terms = {itemID: parseInt(req.params.id)};
+  }
+  model.returnAllRecords(terms)
     .then( (result) => {
       view.sendReplyToRequestor(req, res, next, result);
     })
