@@ -3,10 +3,9 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-const url = 'mongodb://q-and-a-database/qanda';
+const url = 'mongodb://localhost/qanda';
 const options = {
-  user: 'student',
-  pass: 'student',
+
   useNewUrlParser: true,
   useUnifiedTopology: true
 };

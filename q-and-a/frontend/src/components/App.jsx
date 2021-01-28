@@ -1,5 +1,5 @@
 const QTY_OF_REVIEWS_TO_DISPLAY = 3;
-const API_SERVER_URL = '/API/retrieve';
+const API_SERVER_URL = 'http://localhost:3004/API/retrieve';
 
 import React from 'react';
 import Navigation from './Navigation.jsx';
@@ -7,7 +7,7 @@ import Questions from './Questions.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
 import axios from 'axios';
-import classes from './css/App.css';
+import './css/App.css';
 
 class App extends React.Component {
   constructor(props) {

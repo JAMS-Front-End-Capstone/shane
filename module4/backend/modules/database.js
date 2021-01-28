@@ -3,10 +3,9 @@ const mongoose = require('mongoose');
 const faker = require('faker');
 const errorHandler = require(path.join(__dirname, 'errorHandler.js'));
 
-const url = 'mongodb://related-database/related';
+const url = 'mongodb://localhost/related';
 const options = {
-  user: 'student',
-  pass: 'student',
+
   useNewUrlParser: true,
   useUnifiedTopology: true
 };
