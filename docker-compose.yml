@@ -1,0 +1,73 @@
+version: '3.4'
+
+networks:
+  q-and-a:
+    driver: bridge
+  related:
+    driver: bridge
+  proxy:
+    driver: bridge
+
+services:
+
+    q-and-a-api:
+      ports:
+        - 3004:3004
+      build:
+        context: './q-and-a'
+        dockerfile: 'Dockerfile'
+      networks:
+        - q-and-a
+        - proxy
+      depends_on:
+        - q-and-a-database
+      healthcheck:
+          test: ["CMD", "node" , "healthcheck.js"]
+          timeout: 3s
+          retries: 20
+      restart: on-failure
+
+    q-and-a-database:
+      ports:
+        - 33417:27017
+      build:
+        context: './q-and-a/database'
+        dockerfile: 'Dockerfile'
+      networks:
+        - q-and-a
+      healthcheck:
+          test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/csv --quiet
+          timeout: 5s
+          retries: 20
+      restart: on-failure
+
+    related-api:
+      ports:
+        - 3005:3005
+      build:
+        context: './module4'
+        dockerfile: 'Dockerfile'
+      networks:
+        - related
+        - proxy
+      depends_on:
+        - related-database
+      healthcheck:
+          test: ["CMD", "node" , "healthcheck.js"]
+          timeout: 3s
+          retries: 20
+      restart: on-failure
+
+    related-database:
+      ports:
+        - 33517:27017
+      build:
+        context: './module4/database'
+        dockerfile: 'Dockerfile'
+      networks:
+        - related
+      healthcheck:
+          test: echo 'db.runCommand("ping").ok' | mongo localhost:27017/csv --quiet
+          timeout: 5s
+          retries: 20
+      restart: on-failure
