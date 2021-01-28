@@ -15,8 +15,7 @@ services:
       networks:
         - q-and-a
       depends_on:
-        q-and-a-database:
-          condition: service_healthy
+        - q-and-a-database
       healthcheck:
           test: ["CMD", "node" , "healthcheck.js"]
           timeout: 3s

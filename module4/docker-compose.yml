@@ -15,8 +15,7 @@ services:
       networks:
         - related
       depends_on:
-        related-database:
-          condition: service_healthy
+        - related-database
       healthcheck:
           test: ["CMD", "node" , "healthcheck.js"]
           timeout: 3s

@@ -96,7 +96,6 @@ mongoose.connection.on('error', (err) => {
 });
 
 mongoose.connection.once('open', logConnectionResult);
-
 mongoose.connect(databaseURL, options)
   .catch((error) => {
     console.log('error connecting to database:', error);
