@@ -14,12 +14,21 @@ const cors = require('cors');
 app.use(cors());
 
 // morgan
-const morgan = require('morgan');
+app.use(morgan('common', {
+  skip: function (req, res) { return req.ip === '::ffff:127.0.0.1'; }, // prohibits logging of docker healthcheck requests
+  immediate: true
+}));
 app.use(morgan('tiny'));
 
 // body-parser
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+
+// this endpoint is for docker healthcheck and diagnostic purposes
+app.get('/', (req, res, next) => {
+  res.status(200);
+  res.send('Hello, I am the API for: q-and-a.');
+});
 
 // static hosting
 app.use('/avatars', express.static(path.join(__dirname, 'avatars')));

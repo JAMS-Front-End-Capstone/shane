@@ -15,11 +15,20 @@ app.use(cors());
 
 // morgan
 const morgan = require('morgan');
-app.use(morgan('tiny'));
+app.use(morgan('common', {
+  skip: function (req, res) { return req.ip === '::ffff:127.0.0.1'; }, // prohibits logging of docker healthcheck requests
+  immediate: true
+}));
 
 // body-parser
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+
+// this endpoint is for docker healthcheck and diagnostic purposes
+app.get('/', (req, res, next) => {
+  res.status(200);
+  res.send('Hello, I am the API for: related (module4).');
+});
 
 // static hosting
 app.use('/related', express.static(path.join(__dirname, 'related')));
