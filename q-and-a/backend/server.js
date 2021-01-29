@@ -14,11 +14,11 @@ const cors = require('cors');
 app.use(cors());
 
 // morgan
+const morgan = require('morgan');
 app.use(morgan('common', {
   skip: function (req, res) { return req.ip === '::ffff:127.0.0.1'; }, // prohibits logging of docker healthcheck requests
   immediate: true
 }));
-app.use(morgan('tiny'));
 
 // body-parser
 const bodyParser = require('body-parser');
