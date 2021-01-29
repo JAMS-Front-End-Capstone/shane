@@ -25,9 +25,9 @@ app.use(bodyParser.json());
 app.use('/avatars', express.static(path.join(__dirname, 'avatars')));
 
 // routers
-app.get('/API/retrieve', controller.handleAPIrequest);
-app.get('/API/retrieve/:id', controller.handleAPIrequest);
-app.get('/API/seedDatabase', controller.handleDatabaseSeeding);
+app.get('/API/q-and-a/retrieve', controller.handleAPIrequest);
+app.get('/API/q-and-a/retrieve/:id', controller.handleAPIrequest);
+app.get('/API/q-and-a/seedDatabase', controller.handleDatabaseSeeding);
 
 // listeners
 app.listen(port, () => {

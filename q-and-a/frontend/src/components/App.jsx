@@ -1,5 +1,5 @@
 const QTY_OF_REVIEWS_TO_DISPLAY = 3;
-const API_SERVER_URL = 'http://localhost:3004/API/retrieve';
+const API_SERVER_URL = '/API/q-and-a/retrieve';
 
 import React from 'react';
 import Navigation from './Navigation.jsx';
