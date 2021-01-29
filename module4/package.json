@@ -7,7 +7,7 @@
     "backend": "nodemon backend/server.js",
     "frontend": "live-server --port=8080 --watch=frontend/dist --wait=1000 frontend/dist",
     "build-dev": "webpack --config webpack.config.js --watch -d source-map",
-    "build": "webpack --config webpack.config.js --watch",
+    "build": "webpack --config webpack.config.js",
     "start": "node backend/server.js",
     "seed": "node backend/modules/seed.js",
     "test": "jest"

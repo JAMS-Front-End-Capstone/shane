@@ -1,7 +1,7 @@
 const React = require('react');
 import ListItem from './ListItem.jsx';
 import axios from 'axios';
-var API_PROXY = document.getElementById('proxyUrl').attributes[2].nodeValue | '';
+const API_PROXY = document.getElementById('proxyUrl') ? document.getElementById('proxyUrl').attributes[2].nodeValue : '';
 const API_PATH = '/API/related/retrieve';
 import './App.css';
 

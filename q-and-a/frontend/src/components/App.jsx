@@ -1,7 +1,6 @@
 const QTY_OF_REVIEWS_TO_DISPLAY = 3;
 const API_SERVER_URL = '/API/q-and-a/retrieve';
-var API_PROXY = document.getElementById('proxyUrl').attributes[2].nodeValue | '';
-
+const API_PROXY = document.getElementById('proxyUrl') ? document.getElementById('proxyUrl').attributes[2].nodeValue : '';
 import React from 'react';
 import Navigation from './Navigation.jsx';
 import Questions from './Questions.jsx';
