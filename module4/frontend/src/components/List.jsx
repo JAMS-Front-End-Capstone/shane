@@ -1,8 +1,8 @@
 const React = require('react');
 import ListItem from './ListItem.jsx';
 import axios from 'axios';
-const API_SERVER_URL = '/API/related/retrieve';
-const APT_RESEED_URL = '/API/related/seedDatabase';
+var API_PROXY = document.getElementById('proxyUrl').attributes[2].nodeValue | '';
+const API_PATH = '/API/related/retrieve';
 import './App.css';
 
 class List extends React.Component {
@@ -14,7 +14,7 @@ class List extends React.Component {
     this.getElementsFromAPI = this.getElementsFromAPI.bind(this);
   }
   getElementsFromAPI() {
-    axios.get(API_SERVER_URL)
+    axios.get(API_PROXY + API_PATH)
       .then(({ data }) => {
         if (data.length === 0) { console.log('Module 4: List.getElementsFromAPI: ERROR: Received zero records from API server. Check database contents.'); }
         this.setState( { elements: data } );
