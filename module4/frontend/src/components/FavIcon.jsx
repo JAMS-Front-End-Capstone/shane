@@ -7,7 +7,6 @@ class FavIcon extends React.Component {
   render(props) {
     return (
       <div className="saveToTripWrapper">
-        <link rel="stylesheet" href="module4-FavIcon.css"></link>
         <div className="vb-div">
           <span className="vb-background">
             <span className="vb-red">

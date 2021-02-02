@@ -31,7 +31,6 @@ class List extends React.Component {
     if (this.state.elements.length > 0) {
       return (
         <div className="Module4 " key="Module4">
-          <link rel="stylesheet" href="module4-List.css"></link>
           <div id="atf_meta" className="ui_container"><p></p></div>
           <div id="btf_wrap" className="ui_container">
             <div id="taplc_location_detail_recently_viewed_ar_responsive_0" className="ppr_priv_location_detail_recently_viewed">

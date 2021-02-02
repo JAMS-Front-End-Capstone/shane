@@ -7,25 +7,25 @@ class Navigation extends React.Component {
   render() {
     // console.log('rendering Component_Navigation');
     return (
-      <span className="Component_Navigation">
+      <span id="Component_Navigation">
         <div className="navigation-tabs-reviews" data-tab="TABS_REVIEWS" data-section-signature="community" id="REVIEWS">
           <div className="navigation-container">
-            <span className="navigation-section navigation-section-span">
+            <div className="navigation-section navigation-section-span" onClick={(e)=> toggleDisplayOfReviewsAndQandA(e)}>
               <span className="ui_icon pencil-paper navigation-section-icon">
               </span>
               <span className="">
-                <span className="navigation-qty">40</span>
+                <span className="navigation-qty">15</span>
                 <span className="navigation-text">Reviews</span>
               </span>
-            </span>
-            <span className="navigation-section navigation-section-span navigation-forums-section navigation-section-active">
+            </div>
+            <div className="navigation-section navigation-section-span navigation-forums-section navigation-section-active" id="showQanda">
               <span className="ui_icon forums navigation-section-icon">
               </span>
               <span className="">
                 <span className="navigation-qty">{this.props.reviewCount}</span>
                 <span className="navigation-text">Q&amp;A</span>
               </span>
-            </span>
+            </div>
           </div>
         </div>
       </span>
